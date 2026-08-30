@@ -49,11 +49,28 @@
 <c:forEach var="todo" items="${todos}">
 
     <p>
-            ${todo.task}
+
+        <c:choose>
+
+            <c:when test="${todo.completed}">
+                <s>${todo.task}</s>
+                <strong>Completed</strong>
+            </c:when>
+
+            <c:otherwise>
+                ${todo.task}
+
+                <a href="complete-todo?id=${todo.id}">
+                    Complete
+                </a>
+            </c:otherwise>
+
+        </c:choose>
 
         <a href="delete-todo?id=${todo.id}">
             Delete
         </a>
+
     </p>
 
 </c:forEach>

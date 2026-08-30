@@ -79,5 +79,26 @@ public class TodoDAO {
         } finally {
             em.close();
         }
+
+    }
+
+    public void completeTodo(int id) {
+
+        EntityManager em = emf.createEntityManager();
+
+        try {
+            em.getTransaction().begin();
+
+            Todo todo = em.find(Todo.class, id);
+
+            if (todo != null) {
+                todo.setCompleted(true);
+            }
+
+            em.getTransaction().commit();
+
+        } finally {
+            em.close();
+        }
     }
 }
