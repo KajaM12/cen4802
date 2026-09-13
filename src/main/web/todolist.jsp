@@ -15,7 +15,9 @@
 
 <body>
 
-<h1>Todo List</h1>
+<h1>My Hibernate Todo List</h1>
+
+<p> This application was rebuilt using Maven for Assignment 2.</p>
 
 <!-- Add Todo Form and Search Form -->
 <form action="add-todo" method="post">

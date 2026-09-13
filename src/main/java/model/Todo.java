@@ -24,6 +24,7 @@ public class Todo {
         this.completed = false;
     }
 
+
     public int getId() {
         return id;
     }
