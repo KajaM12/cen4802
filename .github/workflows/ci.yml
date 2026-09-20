@@ -1,0 +1,44 @@
+name: Java Maven CI
+
+# Run the workflow whenever code is pushed to the repository
+# or when a pull request is opened or updated.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+
+    # GitHub provides a clean Ubuntu environment for the build.
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Download the project's source code from GitHub.
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # Install the Java version used by the project.
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '24'
+          cache: maven
+
+      # Use the existing Maven build configuration.
+      # This compiles the application, runs the JUnit tests,
+      # and packages the application as a WAR file.
+      - name: Build, test, and package
+        run: mvn clean package
+
+      # Save the generated WAR file as a GitHub Actions artifact.
+      - name: Upload WAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: HibernateToDoApp-WAR
+          path: target/*.war
