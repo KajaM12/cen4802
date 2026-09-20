@@ -47,7 +47,7 @@ public class Todo {
 
     @Override
     public String toString() {
-        return id + ". " + task + (completed ? " [Completed]" : "");
+        return id + ". " + task + (completed ? " [Completed]" : " [Incomplete]");
     }
 
 }

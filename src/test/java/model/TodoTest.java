@@ -55,4 +55,13 @@ class TodoTest {
         // Verifies expected String representation
         assertEquals("0. Submit assignment [Completed]", todo.toString());
     }
+	// Tests that toString() correctly displays incomplete Todo
+	@Test
+	void toStringShouldShowIncompleteStatus(){
+		Todo todo = new Todo("Study Java");
+	
+		//A new Todo should be incomplete.
+		assertEquals("0. Study Java [Incomplete]", todo.toString());
+	}
+
 }
