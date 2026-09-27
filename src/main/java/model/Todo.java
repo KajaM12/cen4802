@@ -45,6 +45,7 @@ public class Todo {
         this.completed = completed;
     }
 
+    // Updated String override
     @Override
     public String toString() {
         return id + ". " + task + (completed ? " [Completed]" : " [Incomplete]");

@@ -15,9 +15,9 @@
 
 <body>
 
-<h1>My Hibernate Todo List</h1>
+<h1>My Hibernate Todo List - Docker v7</h1>
 
-<p> This application was rebuilt using Maven for Assignment 2.</p>
+<p> This application was rebuilt using Maven for Assignment 5.</p>
 
 <!-- Add Todo Form and Search Form -->
 <form action="add-todo" method="post">

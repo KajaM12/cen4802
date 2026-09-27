@@ -19,7 +19,7 @@
                       value="com.mysql.cj.jdbc.Driver"/>
 
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/todoapp?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
+                      value="jdbc:mysql://host.docker.internal:3306/todoapp?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
 
             <property name="javax.persistence.jdbc.user"
                       value="root"/>
