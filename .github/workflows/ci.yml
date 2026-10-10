@@ -53,3 +53,14 @@ jobs:
 
       - name: Confirm Docker image exists
         run: docker image inspect hibernatetodoapp:${{ github.sha }}
+
+      - name: Save Docker image
+        run: docker save hibernatetodoapp:${{ github.sha }} | gzip > hibernatetodoapp-image.tar.gz
+
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: HibernateToDoApp-Docker-Image
+          path: hibernatetodoapp-image.tar.gz
+          if-no-files-found: error
+          retention-days: 7
