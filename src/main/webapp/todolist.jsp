@@ -46,6 +46,7 @@
 <h2>Your Todos:</h2>
 
 <p>Number of results: ${todos.size()}</p>
+<p>Completed: ${summary.completedCount} | Incomplete: ${summary.incompleteCount}</p>
 
 <!-- Display Todos -->
 <c:forEach var="todo" items="${todos}">
