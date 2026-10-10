@@ -22,7 +22,7 @@ class TodoSummaryTest {
 
         //assertEquals(2, summary.getCompletedCount()); changed original value from 2 to 99
         // This will be my intentional test failure
-        assertEquals(99, summary.getCompletedCount());
+        assertEquals(2, summary.getCompletedCount());
         assertEquals(1, summary.getIncompleteCount());
     }
 
