@@ -20,6 +20,7 @@ class TodoSummaryTest {
                 Arrays.asList(first, second, third)
         );
 
+        // Change the value to 99 to test the failure and then change it back to original value to demonstrate success.
         assertEquals(2, summary.getCompletedCount());
         assertEquals(1, summary.getIncompleteCount());
     }

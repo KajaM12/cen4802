@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todoapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todoapp
+  template:
+    metadata:
+      labels:
+        app: todoapp
+    spec:
+      containers:
+        - name: todoapp
+          image: hibernatetodoapp:804b8d3d72e8e10f1182e41122eb82f21c63fd66
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
